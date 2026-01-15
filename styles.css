@@ -10,7 +10,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: url("images/loading_v3.jpg") no-repeat center center;
+  background: url("images/loading.jpg") no-repeat center center;
   background-size: cover;
 }
 

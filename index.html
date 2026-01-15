@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Eternal Realms</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <title>Cargando...</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <h1>Eternal Realms</h1>
-  <button id="startGame">Entrar al mundo</button>
+<body class="loading-screen">
+
+  <img src="loading.jpg" class="loading-bg">
+
+  <div class="progress-container">
+    <div id="progress-bar"></div>
+  </div>
 
   <script src="app.js"></script>
 </body>

@@ -2,7 +2,6 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: black;
-  overflow: hidden;
 }
 
 .loading-screen {
@@ -10,8 +9,6 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: url("images/loading.jpg") no-repeat center center;
-  background-size: cover;
 }
 
 .loading-bg {

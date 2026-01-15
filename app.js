@@ -1,8 +1,19 @@
-const tg = window.Telegram.WebApp;
-tg.ready();
-tg.expand();
+let progress = 0;
+const bar = document.getElementById("progress-bar");
 
-document.getElementById("startGame").onclick = () => {
-  alert("Bienvenido a Eternal Realms");
-  console.log(tg.initDataUnsafe.user);
-};
+const interval = setInterval(() => {
+  progress += 5;
+  bar.style.width = progress + "%";
+
+  if (progress >= 100) {
+    clearInterval(interval);
+
+    const race = localStorage.getItem("race");
+
+    if (race) {
+      window.location.href = "city.html";
+    } else {
+      window.location.href = "welcome.html";
+    }
+  }
+}, 200);

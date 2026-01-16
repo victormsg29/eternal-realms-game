@@ -11,24 +11,21 @@ html, body {
   background: black;
 }
 
-/* FULLSCREEN REAL */
-.loading-screen {
-  position: fixed;
-  inset: 0;
-}
-
-/* IMAGEN */
-.loading-bg {
-  position: absolute;
-  inset: 0;
+.loading-wrapper {
   width: 100%;
   height: 100%;
-  object-fit: contain;   /* 👈 NO ZOOM */
-  object-position: center;
-  background: black;
+  display: flex;
+  align-items: stretch;   /* 👈 hace full screen vertical */
+  justify-content: center;
 }
 
-/* BARRA ABAJO */
+.loading-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* 👈 llena toda la pantalla */
+  object-position: center;
+}
+
 .progress-container {
   position: absolute;
   bottom: 6%;
@@ -49,4 +46,69 @@ html, body {
   transition: width 0.05s linear;
 }
 
+
+/* ============================= */
+/* Pantalla de Bienvenida - Welcome */
+/* ============================= */
+
+.welcome {
+  background: url('images/welcome.webp') no-repeat center center / cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.welcome-wrapper {
+  max-width: 80%;
+}
+
+/* Título */
+.welcome h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+/* Texto */
+.welcome p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* Botón */
+.welcome button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: #0072ff;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.welcome button:hover {
+  background-color: #00c6ff;
+  transform: scale(1.05);
+}
+
+/* Animaciones fade-in */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.delay-1 { animation-delay: 1s; }
+.delay-2 { animation-delay: 2s; }
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
 

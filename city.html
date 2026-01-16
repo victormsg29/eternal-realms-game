@@ -7,24 +7,41 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-  <div class="city"></div>
+<body class="city">
+
+  <!-- Header del héroe -->
+  <div class="city-header">
+    <div class="hero-mini">
+      <img id="hero-img" src="" alt="Heroe">
+      <div class="hero-lvl" id="hero-lvl">Lvl 1</div>
+      <div class="hero-gold" id="hero-gold">Oro: 0</div>
+    </div>
+  </div>
+
+  <!-- Fondo de la ciudad -->
+  <div class="city-background"></div>
 
   <script>
     // Tomamos la raza desde query string
     const urlParams = new URLSearchParams(window.location.search);
     const race = urlParams.get("race") || "humano"; // default humano
 
-    const city = document.querySelector(".city");
-
-    // Fondos de prueba
+    // Configuración de fondos y héroes
     const backgrounds = {
       humano: "images/fondo_humano.webp",
       elfo: "images/fondo_elfo.webp",
       orco: "images/fondo_orco.webp"
     };
 
-    city.style.backgroundImage = `url(${backgrounds[race]})`;
+    const heroImgs = {
+      humano: "images/humano.webp",
+      elfo: "images/elfo.webp",
+      orco: "images/orco.webp"
+    };
+
+    document.getElementById("hero-img").src = heroImgs[race];
+    document.querySelector(".city-background").style.backgroundImage = `url(${backgrounds[race]})`;
   </script>
+
 </body>
 </html>

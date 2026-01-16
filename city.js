@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const city = document.querySelector(".city");
 
   if (!race) {
-    window.location.href = "../race.html";
+    window.location.href = "race.html";
     return;
   }
 

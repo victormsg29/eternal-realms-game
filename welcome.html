@@ -2,27 +2,28 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Bienvenido a Eternal Realms</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenido - Test</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="welcome">
 
   <div class="welcome-wrapper">
-    <h1 class="fade-in">Eternal Realms</h1>
-    <p class="fade-in delay-1">
+    <h1>Eternal Realms</h1>
+    <p>
       Tres mundos. Tres razas.<br>
       Una era de guerra, gloria y poder.<br>
       Tu destino comienza ahora.
     </p>
-    <button class="fade-in delay-2" onclick="startGame()">Comenzar</button>
+    <button onclick="startGame()">Comenzar</button>
   </div>
 
   <script>
     function startGame() {
-      window.location.href = "race.html";
+      // Redirige a selección de raza
+      window.location.href = "race.html?t=" + Date.now();
     }
   </script>
+
 </body>
 </html>

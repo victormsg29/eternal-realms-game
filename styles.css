@@ -11,41 +11,33 @@ html, body {
   background: black;
 }
 
-/* CONTENEDOR EXTERNO */
-#game-wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-/* LIENZO DEL JUEGO (TAMAÑO FIJO) */
-#game {
-  position: relative;
-  width: 1080px;
-  height: 1920px;
-  background: black;
-  transform-origin: top left;
+/* FULLSCREEN REAL */
+.loading-screen {
+  position: fixed;
+  inset: 0;
 }
 
 /* IMAGEN */
-#loading-img {
+.loading-bg {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;        /* llena sin bordes */
+  object-position: center; /* centrado */
 }
 
-/* BARRA */
+/* BARRA ABAJO */
 .progress-container {
   position: absolute;
-  bottom: 120px;
+  bottom: 6%;
   left: 50%;
   transform: translateX(-50%);
-  width: 70%;
-  height: 18px;
+  width: min(80%, 420px);
+  height: 16px;
   background: rgba(255,255,255,0.25);
   border-radius: 10px;
+  z-index: 2;
 }
 
 #progress-bar {
@@ -55,4 +47,5 @@ html, body {
   border-radius: 10px;
   transition: width 0.05s linear;
 }
+
 

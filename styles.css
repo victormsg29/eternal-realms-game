@@ -5,34 +5,47 @@
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   background: black;
 }
 
-/* IMAGEN PERFECTA EN PC Y MÓVIL */
-.loading-img {
-  position: fixed;
-  top: 0;
-  left: 0;
+/* CONTENEDOR EXTERNO */
+#game-wrapper {
   width: 100%;
   height: 100%;
-  object-fit: contain;   /* CAMBIO CLAVE */
-  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* BARRA ABAJO */
+/* LIENZO DEL JUEGO (TAMAÑO FIJO) */
+#game {
+  position: relative;
+  width: 1080px;
+  height: 1920px;
+  background: black;
+  transform-origin: top left;
+}
+
+/* IMAGEN */
+#loading-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* BARRA */
 .progress-container {
-  position: fixed;
-  bottom: 5vh;
+  position: absolute;
+  bottom: 120px;
   left: 50%;
   transform: translateX(-50%);
-  width: min(80%, 420px);  /* evita que sea gigante en PC */
-  height: 16px;
+  width: 70%;
+  height: 18px;
   background: rgba(255,255,255,0.25);
   border-radius: 10px;
-  z-index: 2;
 }
 
 #progress-bar {

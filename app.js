@@ -1,20 +1,23 @@
-function fixViewport() {
-  const vh = window.visualViewport
-    ? window.visualViewport.height
-    : window.innerHeight;
+function scaleGame() {
+  const game = document.getElementById("game");
 
-  document.documentElement.style.height = vh + "px";
-  document.body.style.height = vh + "px";
+  const scaleX = window.innerWidth / 1080;
+  const scaleY = window.innerHeight / 1920;
+
+  const scale = Math.min(scaleX, scaleY);
+
+  game.style.transform = `scale(${scale})`;
 }
 
-fixViewport();
-window.addEventListener("resize", fixViewport);
+window.addEventListener("resize", scaleGame);
+scaleGame();
 
+/* BARRA DE CARGA */
 let progress = 0;
 const bar = document.getElementById("progress-bar");
 
-const duration = 5000; // 5 segundos
-const intervalTime = duration / 100;
+const duration = 5000;
+const step = duration / 100;
 
 const interval = setInterval(() => {
   progress++;
@@ -22,12 +25,7 @@ const interval = setInterval(() => {
 
   if (progress >= 100) {
     clearInterval(interval);
-
     const race = localStorage.getItem("race");
-    if (race) {
-      window.location.href = "city.html";
-    } else {
-      window.location.href = "welcome.html";
-    }
+    window.location.href = race ? "city.html" : "welcome.html";
   }
-}, intervalTime);
+}, step);

@@ -1,3 +1,15 @@
+function fixViewport() {
+  const vh = window.visualViewport
+    ? window.visualViewport.height
+    : window.innerHeight;
+
+  document.documentElement.style.height = vh + "px";
+  document.body.style.height = vh + "px";
+}
+
+fixViewport();
+window.addEventListener("resize", fixViewport);
+
 let progress = 0;
 const bar = document.getElementById("progress-bar");
 

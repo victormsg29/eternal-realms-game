@@ -2,17 +2,30 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- BLOQUEA ESCALADO RARO EN PC Y MÓVIL -->
+  <meta name="viewport"
+        content="width=device-width,
+                 height=device-height,
+                 initial-scale=1.0,
+                 maximum-scale=1.0,
+                 user-scalable=no">
+
   <title>Cargando...</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- PRELOAD DE IMAGEN -->
+  <link rel="preload" as="image" href="images/loading_v5.jpg">
 </head>
 
 <body>
 
-  <!-- IMAGEN DE LOADING -->
-  <img src="images/loading.png" class="loading-img" alt="loading">
+  <img src="images/loading.png"
+       class="loading-img"
+       alt="loading"
+       loading="eager"
+       decoding="async">
 
-  <!-- BARRA DE CARGA -->
   <div class="progress-container">
     <div id="progress-bar"></div>
   </div>

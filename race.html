@@ -7,6 +7,7 @@
   <title>Selecciona tu héroe</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="race">
 
   <div class="race-wrapper">
@@ -15,17 +16,17 @@
 
     <div class="race-options">
       <div class="race-card" onclick="chooseRace('humano')">
-        <img src="images/humano.webp" alt="Humano">
+        <img src="images/humano.webp">
         <span>Humano</span>
       </div>
 
       <div class="race-card" onclick="chooseRace('elfo')">
-        <img src="images/elfo.webp" alt="Elfo">
+        <img src="images/elfo.webp">
         <span>Elfo</span>
       </div>
 
       <div class="race-card" onclick="chooseRace('orco')">
-        <img src="images/orco.webp" alt="Orco">
+        <img src="images/orco.webp">
         <span>Orco</span>
       </div>
     </div>
@@ -33,10 +34,14 @@
 
   <script>
     function chooseRace(race) {
-      //localStorage.setItem('race', race);
-      window.location.href = "city.html"; // lleva a la ciudad inicial
+      localStorage.setItem("race", race);
+      localStorage.setItem("level", 1);
+      localStorage.setItem("gold", 0);
+
+      window.location.href = "city/city.html";
     }
   </script>
 
 </body>
 </html>
+

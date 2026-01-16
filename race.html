@@ -30,24 +30,13 @@
         <span>Orco</span>
       </div>
     </div>
-
-    <!-- Botón de reset temporal para pruebas -->
-    <button onclick="resetGame()">Resetear prueba</button>
   </div>
 
   <script>
-    // Función para elegir raza (modo prueba)
+    // Elegir raza y redirigir a city.html con timestamp
     function chooseRace(race) {
-      // Redirige a city.html con query param + timestamp para evitar cache
       const timestamp = Date.now();
       window.location.href = `city.html?race=${race}&t=${timestamp}`;
-    }
-
-    // Botón de reset temporal
-    function resetGame() {
-      alert("Juego reseteado. Puedes elegir otra raza.");
-      // Recarga la página con timestamp para forzar nueva elección
-      window.location.href = `race.html?t=${Date.now()}`;
     }
   </script>
 

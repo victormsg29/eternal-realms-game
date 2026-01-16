@@ -4,7 +4,7 @@ function scaleGame() {
   const scaleX = window.innerWidth / 1080;
   const scaleY = window.innerHeight / 1920;
 
-  const scale = Math.min(scaleX, scaleY);
+  const scale = Math.max(scaleX, scaleY); // CLAVE
 
   game.style.transform = `scale(${scale})`;
 }

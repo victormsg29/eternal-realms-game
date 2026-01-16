@@ -52,7 +52,7 @@ html, body {
 /* ============================= */
 
 .welcome {
-  background: url('images/welcome_v1.webp') no-repeat center center / cover;
+  background: url('images/welcome.webp') no-repeat center center / cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,3 +112,66 @@ html, body {
   to { opacity: 1; }
 }
 
+/* ========================= */
+/* Selección de raza - Race  */
+/* ========================= */
+
+.race {
+  width: 100%;
+  height: 100%;
+  background: url('images/eleccion.webp') no-repeat center center / cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  flex-direction: column;
+}
+
+.race-wrapper h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+.race-wrapper p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* Contenedor de opciones */
+.race-options {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Cada tarjeta de raza */
+.race-card {
+  background: rgba(0,0,0,0.4);
+  border-radius: 12px;
+  padding: 0.5rem;
+  width: 120px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.race-card:hover {
+  transform: scale(1.1);
+  background: rgba(0,0,0,0.6);
+}
+
+.race-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0.3rem;
+}
+
+.race-card span {
+  display: block;
+  font-weight: bold;
+  color: #fff;
+}

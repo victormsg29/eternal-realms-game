@@ -2,25 +2,41 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Elige tu raza</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Selecciona tu héroe</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="race">
 
-<h2>Elige tu raza (decisión permanente)</h2>
+  <div class="race-wrapper">
+    <h1>Elige tu héroe</h1>
+    <p>Cada raza tiene habilidades únicas. ¡Escoge sabiamente!</p>
 
-<button onclick="selectRace('humano')">Humano</button>
-<button onclick="selectRace('elfo')">Elfo</button>
-<button onclick="selectRace('orco')">Orco</button>
+    <div class="race-options">
+      <div class="race-card" onclick="chooseRace('humano')">
+        <img src="images/humano.webp" alt="Humano">
+        <span>Humano</span>
+      </div>
 
-<script>
-function selectRace(race) {
-  localStorage.setItem("race", race);
-  localStorage.setItem("level", 1);
-  localStorage.setItem("gold", 100);
-  window.location.href = "city.html";
-}
-</script>
+      <div class="race-card" onclick="chooseRace('elfo')">
+        <img src="images/elfo.webp" alt="Elfo">
+        <span>Elfo</span>
+      </div>
+
+      <div class="race-card" onclick="chooseRace('orco')">
+        <img src="images/orco.webp" alt="Orco">
+        <span>Orco</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function chooseRace(race) {
+      localStorage.setItem('race', race);
+      window.location.href = "city.html"; // lleva a la ciudad inicial
+    }
+  </script>
 
 </body>
 </html>

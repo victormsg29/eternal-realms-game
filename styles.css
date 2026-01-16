@@ -5,37 +5,36 @@
 }
 
 html, body {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   background: black;
 }
 
-/* Imagen FULL SCREEN */
+/* IMAGEN PERFECTA EN PC Y MÓVIL */
 .loading-img {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   /* clave para móvil y PC */
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;       /* CLAVE */
+  object-position: center; /* CLAVE */
   z-index: 1;
 }
 
-/* Contenedor de barra abajo */
+/* BARRA ABAJO */
 .progress-container {
   position: fixed;
-  bottom: 5%;
+  bottom: 5vh;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%;
-  height: 18px;
+  width: min(80%, 420px);  /* evita que sea gigante en PC */
+  height: 16px;
   background: rgba(255,255,255,0.25);
   border-radius: 10px;
   z-index: 2;
 }
 
-/* Barra azul animada */
 #progress-bar {
   width: 0%;
   height: 100%;
@@ -43,3 +42,4 @@ html, body {
   border-radius: 10px;
   transition: width 0.05s linear;
 }
+

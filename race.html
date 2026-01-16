@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Selecciona tu héroe</title>
+  <title>Selecciona tu héroe - Test</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -30,18 +30,32 @@
         <span>Orco</span>
       </div>
     </div>
+
+    <button onclick="resetGame()">Resetear prueba</button>
   </div>
 
   <script>
+    // Función temporal de prueba
     function chooseRace(race) {
-      localStorage.setItem("race", race);
-      localStorage.setItem("level", 1);
-      localStorage.setItem("gold", 0);
+      // Guardar solo en variable temporal
+      window.currentRace = race;
+      window.currentLevel = 1;
+      window.currentGold = 0;
 
-      window.location.href = "city.html";
+      // Redirige a city.html con query param de prueba
+      window.location.href = `city.html?race=${race}`;
+    }
+
+    function resetGame() {
+      window.currentRace = null;
+      window.currentLevel = null;
+      window.currentGold = null;
+      alert("Juego reseteado. Vuelve a elegir raza.");
+      location.reload();
     }
   </script>
 
 </body>
 </html>
+
 

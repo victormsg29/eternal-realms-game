@@ -3,13 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ciudad</title>
+  <title>Ciudad - Test</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-sdsds
+
 <body>
   <div class="city"></div>
 
-  <script src="city.js"></script>
+  <script>
+    // Tomamos la raza desde query string
+    const urlParams = new URLSearchParams(window.location.search);
+    const race = urlParams.get("race") || "humano"; // default humano
+
+    const city = document.querySelector(".city");
+
+    // Fondos de prueba
+    const backgrounds = {
+      humano: "images/fondo_humano.webp",
+      elfo: "images/fondo_elfo.webp",
+      orco: "images/fondo_orco.webp"
+    };
+
+    city.style.backgroundImage = `url(${backgrounds[race]})`;
+  </script>
 </body>
 </html>

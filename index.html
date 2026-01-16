@@ -14,19 +14,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="loading-screen">
 
-  <!-- CONTENEDOR DEL JUEGO -->
-  <div id="game-wrapper">
-    <div id="game">
+  <img src="images/loading_v5.webp"
+       class="loading-bg"
+       alt="loading"
+       loading="eager">
 
-      <img src="images/loading_v5.webp" id="loading-img">
-
-      <div class="progress-container">
-        <div id="progress-bar"></div>
-      </div>
-
-    </div>
+  <div class="progress-container">
+    <div id="progress-bar"></div>
   </div>
 
   <script src="app.js"></script>

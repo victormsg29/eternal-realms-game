@@ -2,24 +2,36 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width,
-                 height=device-height,
-                 initial-scale=1.0,
-                 maximum-scale=1.0,
-                 user-scalable=no">
-  <title>Loading</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading - Test</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="loading">
 
-  <div class="loading-wrapper">
-    <img src="images/loading_v6.webp" class="loading-bg" alt="loading" loading="eager">
-    <div class="progress-container">
-      <div id="progress-bar"></div>
-    </div>
+<div class="loading-wrapper">
+  <img src="images/loading_v6.webp" alt="Loading" class="loading-bg">
+  <div class="progress-container">
+    <div id="progress-bar"></div>
   </div>
+</div>
 
-  <script src="app.js"></script>
+  <script>
+    let progress = 0;
+    const bar = document.getElementById("progress-bar");
+    const duration = 5000; // 5 segundos
+    const stepTime = duration / 100;
+
+    const interval = setInterval(() => {
+      progress++;
+      bar.style.width = progress + "%";
+
+      if (progress >= 100) {
+        clearInterval(interval);
+        // Redirige a bienvenida
+        window.location.href = "welcome.html?t=" + Date.now();
+      }
+    }, stepTime);
+  </script>
+
 </body>
 </html>

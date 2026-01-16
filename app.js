@@ -1,10 +1,8 @@
 let progress = 0;
 const bar = document.getElementById("progress-bar");
 
-// Duración total ~5 segundos (5000ms)
-const duration = 5000;
-const steps = 100; // porcentaje
-const intervalTime = duration / steps;
+const duration = 5000; // 5 segundos
+const intervalTime = duration / 100;
 
 const interval = setInterval(() => {
   progress++;
@@ -13,7 +11,6 @@ const interval = setInterval(() => {
   if (progress >= 100) {
     clearInterval(interval);
 
-    // Revisar si ya hay raza guardada
     const race = localStorage.getItem("race");
     if (race) {
       window.location.href = "city.html";

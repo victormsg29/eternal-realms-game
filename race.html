@@ -16,46 +16,41 @@
 
     <div class="race-options">
       <div class="race-card" onclick="chooseRace('humano')">
-        <img src="images/humano.webp">
+        <img src="images/humano.webp" alt="Humano">
         <span>Humano</span>
       </div>
 
       <div class="race-card" onclick="chooseRace('elfo')">
-        <img src="images/elfo.webp">
+        <img src="images/elfo.webp" alt="Elfo">
         <span>Elfo</span>
       </div>
 
       <div class="race-card" onclick="chooseRace('orco')">
-        <img src="images/orco.webp">
+        <img src="images/orco.webp" alt="Orco">
         <span>Orco</span>
       </div>
     </div>
 
+    <!-- Botón de reset temporal para pruebas -->
     <button onclick="resetGame()">Resetear prueba</button>
   </div>
 
   <script>
-    // Función temporal de prueba
+    // Función para elegir raza (modo prueba)
     function chooseRace(race) {
-      // Guardar solo en variable temporal
-      window.currentRace = race;
-      window.currentLevel = 1;
-      window.currentGold = 0;
-
-      // Redirige a city.html con query param de prueba
-      window.location.href = `city.html?race=${race}`;
+      // Redirige a city.html con query param + timestamp para evitar cache
+      const timestamp = Date.now();
+      window.location.href = `city.html?race=${race}&t=${timestamp}`;
     }
 
+    // Botón de reset temporal
     function resetGame() {
-      window.currentRace = null;
-      window.currentLevel = null;
-      window.currentGold = null;
-      alert("Juego reseteado. Vuelve a elegir raza.");
-      location.reload();
+      alert("Juego reseteado. Puedes elegir otra raza.");
+      // Recarga la página con timestamp para forzar nueva elección
+      window.location.href = `race.html?t=${Date.now()}`;
     }
   </script>
 
 </body>
 </html>
-
 

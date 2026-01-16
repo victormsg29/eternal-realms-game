@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- BLOQUEA ESCALADO RARO EN PC Y MÓVIL -->
   <meta name="viewport"
         content="width=device-width,
                  height=device-height,
@@ -13,21 +12,21 @@
 
   <title>Cargando...</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- PRELOAD DE IMAGEN -->
-  <link rel="preload" as="image" href="images/loading_v5.webp">
 </head>
 
 <body>
 
-  <img src="images/loading_v5.webp"
-       class="loading-img"
-       alt="loading"
-       loading="eager"
-       decoding="async">
+  <!-- CONTENEDOR DEL JUEGO -->
+  <div id="game-wrapper">
+    <div id="game">
 
-  <div class="progress-container">
-    <div id="progress-bar"></div>
+      <img src="images/loading_v5.webp" id="loading-img">
+
+      <div class="progress-container">
+        <div id="progress-bar"></div>
+      </div>
+
+    </div>
   </div>
 
   <script src="app.js"></script>

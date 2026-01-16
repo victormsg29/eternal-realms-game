@@ -175,3 +175,9 @@ html, body {
   font-weight: bold;
   color: #fff;
 }
+.city {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
